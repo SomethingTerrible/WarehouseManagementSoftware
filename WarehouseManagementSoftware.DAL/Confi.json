@@ -1,0 +1,6 @@
+{
+  "connectionStrings": {
+    "DefaultConnection": "Host=localhost; Port =5432; Database = WarehouseManagement;Username= postgres; Password = 3d5ef0"
+  }
+
+}
