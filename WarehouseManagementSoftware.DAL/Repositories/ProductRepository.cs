@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Data;
 using WarehouseManagementSoftware.DAL.Context;
 using WarehouseManagementSoftware.DAL.Entities;
 using WarehouseManagementSoftware.DAL.Interfaces;

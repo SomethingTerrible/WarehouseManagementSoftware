@@ -5,7 +5,6 @@ using System.Text;
 
 namespace WarehouseManagementSoftware.DAL.Entities
 {
-    [Table("Product")]
     public class Product
     {
         public int Id { get; set; }

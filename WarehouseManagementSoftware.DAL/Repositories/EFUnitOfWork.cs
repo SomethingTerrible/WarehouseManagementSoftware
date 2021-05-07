@@ -16,13 +16,13 @@ namespace WarehouseManagementSoftware.DAL.Repositories
 
         private IRepository<Warehouse> _warehouses;
 
-        private IRepository<ProductsInWarehouses> _productsInWarehouses;
+        private IRepository<ProductInWarehouse> _productsInWarehouses;
 
         public EFUnitOfWork()
         {
             var builder = new ConfigurationBuilder();
-            builder.SetBasePath(Directory.GetCurrentDirectory());
-            builder.AddJsonFile("Confi.json");
+            //builder.SetBasePath(Directory.GetCurrentDirectory());
+            builder.AddJsonFile(@"C:\Users\Admin\source\repos\WarehouseManagementSoftware\WarehouseManagementSoftware.DAL\Confi.json");
             var config = builder.Build();
 
             string connectionString = config.GetConnectionString("DefaultConnection");
@@ -55,7 +55,7 @@ namespace WarehouseManagementSoftware.DAL.Repositories
             }
         }
 
-        public IRepository<ProductsInWarehouses> ProductsInWarehouses
+        public IRepository<ProductInWarehouse> ProductsInWarehouses
         {
             get
             {

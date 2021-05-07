@@ -8,7 +8,7 @@ using WarehouseManagementSoftware.DAL.Interfaces;
 
 namespace WarehouseManagementSoftware.DAL.Repositories
 {
-    class ProductsInWarehousesRepository : IRepository<ProductsInWarehouses>
+    class ProductsInWarehousesRepository : IRepository<ProductInWarehouse>
     {
         private ApplicationContext _db;
 
@@ -17,7 +17,7 @@ namespace WarehouseManagementSoftware.DAL.Repositories
             _db = context;
         }
 
-        public void Create(ProductsInWarehouses item)
+        public void Create(ProductInWarehouse item)
         {
             _db.ProductsInWarehouses.Add(item);
         }
@@ -29,22 +29,22 @@ namespace WarehouseManagementSoftware.DAL.Repositories
                 _db.ProductsInWarehouses.Remove(productInStock);
         }
 
-        public IEnumerable<ProductsInWarehouses> Find(Func<ProductsInWarehouses, bool> predicate)
+        public IEnumerable<ProductInWarehouse> Find(Func<ProductInWarehouse, bool> predicate)
         {
             return _db.ProductsInWarehouses.Where(predicate).ToList();
         }
 
-        public ProductsInWarehouses Get(int id)
+        public ProductInWarehouse Get(int id)
         {
             return _db.ProductsInWarehouses.Find(id);
         }
 
-        public IEnumerable<ProductsInWarehouses> GetAll()
+        public IEnumerable<ProductInWarehouse> GetAll()
         {
             return _db.ProductsInWarehouses;
         }
 
-        public void Update(ProductsInWarehouses item)
+        public void Update(ProductInWarehouse item)
         {
             _db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         }
