@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WarehouseManagementSoftware.BLL\WarehouseManagementSoftware.BLL.csproj" />
+    <ProjectReference Include="..\WarehouseManagementSoftware.DAL\WarehouseManagementSoftware.DAL.csproj" />
   </ItemGroup>
 
 

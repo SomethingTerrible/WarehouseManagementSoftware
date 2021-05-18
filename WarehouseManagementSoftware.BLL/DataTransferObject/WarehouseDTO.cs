@@ -7,7 +7,6 @@ namespace WarehouseManagementSoftware.BLL.DataTransferObject
     public class WarehouseDTO
     {
         public int Id { get; set; }
-
         public string  WarehouseName { get; set; }
         public string WarehouseAddress { get; set; }
 

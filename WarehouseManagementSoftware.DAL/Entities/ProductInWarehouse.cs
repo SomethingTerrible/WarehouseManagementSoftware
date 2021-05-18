@@ -8,9 +8,9 @@ namespace WarehouseManagementSoftware.DAL.Entities
     public class ProductInWarehouse
     { 
         public int Id { get; set; }
-        public Product Product{ get; set; }
+        public int ProductId{ get; set; }
         
-        public Warehouse Warehouse { get; set; }
+        public int  WarehouseId { get; set; }
 
     }
 }

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseManagementSoftware
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseManagementSoftware.BLL", "WarehouseManagementSoftware.BLL\WarehouseManagementSoftware.BLL.csproj", "{F71A846D-8951-4200-9FBD-306A29FE150B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagementSoftware.WebApi", "WarehouseManagementSoftware.WebApi\WarehouseManagementSoftware.WebApi.csproj", "{B07174FF-D94A-4FC7-A30A-1A25F7C571D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseManagementSoftware.WebApi", "WarehouseManagementSoftware.WebApi\WarehouseManagementSoftware.WebApi.csproj", "{B07174FF-D94A-4FC7-A30A-1A25F7C571D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

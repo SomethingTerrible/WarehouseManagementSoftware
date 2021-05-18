@@ -8,9 +8,9 @@ namespace WarehouseManagementSoftware.BLL.DataTransferObject
     {
         public int Id { get; set; }
 
-        public ProductDTO Product { get; set; }
+        public int  ProductId { get; set; }
 
-        public WarehouseDTO Warehouse { get; set; }
+        public int  WarehouseId { get; set; }
 
     }
 }

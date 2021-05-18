@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using WarehouseManagementSoftware.BLL.DataTransferObject;
 using WarehouseManagementSoftware.BLL.Interfaces;
 using WarehouseManagementSoftware.DAL.Entities;
@@ -9,27 +8,25 @@ using WarehouseManagementSoftware.DAL.Interfaces;
 
 namespace WarehouseManagementSoftware.BLL.Services
 {
-    public class ProdcutInWarehouseService : IProductInWarehouseService
+    public class ProductInWarehouseService : IProductInWarehouseService
     {
         IUnitOfWork Database { get; set; }
 
-        public void AddProductInStock(ProductDTO product, WarehouseDTO warehouse, int id)
+        public ProductInWarehouseService(IUnitOfWork database)
         {
-            var productExists = (Database.Products.Get(product.Id) != null) ;
-            var warehouseExists = (Database.Warehouses.Get(warehouse.Id) != null);
-            if (!(productExists && warehouseExists))
-                throw new ArgumentNullException("Нет элементов с такими id");
-            Database.ProductsInWarehouses.Create(new ProductInWarehouse
+            Database = database;
+        }
+
+        public void AddProductInStock(ProductsInWarehousesDTO item )
+        {
+
+            var n_item = new ProductInWarehouse
             {
-                Id = id,
-                Product = new Product { Id = product.Id, ProductName = product.ProductName },
-                Warehouse = new Warehouse
-                {
-                    Id = warehouse.Id,
-                    WarehouseName = warehouse.WarehouseName,
-                    WarehouseAddress = warehouse.WarehouseAddress
-                }
-            });
+                Id = item.Id,
+                ProductId = item.ProductId,
+                WarehouseId = item.WarehouseId
+            };
+            Database.ProductsInWarehouses.Create(n_item);
             Database.Save();
         }
 
@@ -50,6 +47,7 @@ namespace WarehouseManagementSoftware.BLL.Services
 
         public IEnumerable<ProductsInWarehousesDTO> GetAll()
         {
+            
             var mapper = new MapperConfiguration(configuration
                              => configuration
                              .CreateMap<ProductInWarehouse, 
@@ -58,6 +56,17 @@ namespace WarehouseManagementSoftware.BLL.Services
             return mapper.Map<IEnumerable<ProductInWarehouse>,
                    List<ProductsInWarehousesDTO>>
                    (Database.ProductsInWarehouses.GetAll());
+        }
+
+        public void Update(ProductsInWarehousesDTO productInStock)
+        {
+            var mapper = new MapperConfiguration(
+                              configuration => configuration.
+                              CreateMap<ProductsInWarehousesDTO, ProductInWarehouse>()).
+                              CreateMapper();
+            Database.ProductsInWarehouses.
+                Update(mapper.Map<ProductsInWarehousesDTO, ProductInWarehouse>(productInStock));
+            Database.Save();
         }
     }
 }

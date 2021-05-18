@@ -10,7 +10,7 @@ namespace WarehouseManagementSoftware.DAL.Repositories
 {
     public class EFUnitOfWork : IUnitOfWork
     {
-        private ApplicationContext _db;
+        private readonly ApplicationContext _db;
 
         private IRepository<Product> _products;
 
@@ -21,7 +21,6 @@ namespace WarehouseManagementSoftware.DAL.Repositories
         public EFUnitOfWork()
         {
             var builder = new ConfigurationBuilder();
-            //builder.SetBasePath(Directory.GetCurrentDirectory());
             builder.AddJsonFile(@"C:\Users\Admin\source\repos\WarehouseManagementSoftware\WarehouseManagementSoftware.DAL\Confi.json");
             var config = builder.Build();
 

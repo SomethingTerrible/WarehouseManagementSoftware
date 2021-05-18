@@ -13,6 +13,8 @@ namespace WarehouseManagementSoftware.BLL.Interfaces
 
         IEnumerable<WarehouseDTO> GetWarehouses();
 
+        void Update(WarehouseDTO stock);
+
         void Dispose();
     }
 }

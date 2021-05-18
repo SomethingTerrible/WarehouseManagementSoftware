@@ -10,7 +10,7 @@ namespace WarehouseManagementSoftware.DAL.Repositories
 {
     public class ProductRepository :IRepository<Product>
     {
-        private ApplicationContext _db;
+        private  ApplicationContext _db;
 
         public ProductRepository(ApplicationContext context)
         {

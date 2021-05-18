@@ -9,10 +9,11 @@ namespace WarehouseManagementSoftware.BLL.Interfaces
     {
         void DeleteItem(int id);
 
-        void AddProductInStock(ProductDTO product, WarehouseDTO warehouse, int id);
+        void AddProductInStock(ProductsInWarehousesDTO item);
 
         IEnumerable<ProductsInWarehousesDTO> GetAll();
 
+        void Update(ProductsInWarehousesDTO productInStock);
         void Dispose();
     }
 }

@@ -8,10 +8,15 @@ using WarehouseManagementSoftware.DAL.Entities;
 using WarehouseManagementSoftware.DAL.Interfaces;
 
 namespace WarehouseManagementSoftware.BLL.Services
-{
+{   
     public class WarehouseService :IWarehouseService
     {
         IUnitOfWork Database { get; set; }
+
+        public WarehouseService(IUnitOfWork database)
+        {
+            Database = database;
+        }
 
         public void DeleteStock(int id)
         {
@@ -52,6 +57,16 @@ namespace WarehouseManagementSoftware.BLL.Services
                 WarehouseAddress = stock.WarehouseAddress
             };
             Database.Warehouses.Create(warehouse);
+            Database.Save();
+        }
+
+        public void Update(WarehouseDTO stock)
+        {
+            var mapper = new MapperConfiguration(
+                             configration => configration.
+                             CreateMap<WarehouseDTO, Warehouse>()).
+                             CreateMapper();
+            Database.Warehouses.Update(mapper.Map<WarehouseDTO, Warehouse>(stock));
             Database.Save();
         }
     }

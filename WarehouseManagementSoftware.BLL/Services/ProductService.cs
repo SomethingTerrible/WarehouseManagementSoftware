@@ -21,10 +21,15 @@ namespace WarehouseManagementSoftware.BLL.Services
         public void AddProduct(ProductDTO product)
         {
             if (product == null)
+            {
                 throw new ArgumentException("Неверные данные о продукте");
-            Product prod = new Product { Id = product.Id, ProductName = product.ProductName };
-
-            Database.Products.Create(prod);
+            }
+            Product n_prod = new Product
+            {
+                Id = product.Id,
+                ProductName = product.ProductName
+            };
+            Database.Products.Create(n_prod);
             Database.Save();
         }
 
@@ -52,6 +57,16 @@ namespace WarehouseManagementSoftware.BLL.Services
         public void Dispose()
         {
             Database.Dispose();
+        }
+
+        public void Update(ProductDTO product)
+        {
+            var mapper = new MapperConfiguration(
+                             configuration => configuration.
+                             CreateMap<ProductDTO,Product>()).
+                             CreateMapper();
+            Database.Products.Update(mapper.Map<ProductDTO, Product>(product));
+            Database.Save();
         }
     }
 }

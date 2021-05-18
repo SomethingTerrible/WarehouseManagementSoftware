@@ -7,6 +7,12 @@ namespace WarehouseManagementSoftware.DAL.Interfaces
     public interface IRepository<T> where T: class
     {
         IEnumerable<T> GetAll();
+        
+        /// <summary>
+        /// Переименовать GetById
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         T Get(int id);
 
         IEnumerable<T> Find(Func<T, bool> predicate);
