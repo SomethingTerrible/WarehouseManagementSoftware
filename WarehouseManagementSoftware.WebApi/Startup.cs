@@ -22,10 +22,10 @@ namespace WarehouseManagementSoftware.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IWarehouseService, WarehouseService>();
-            services.AddTransient<IProductInWarehouseService, ProductInWarehouseService>();
-            services.AddTransient<IUnitOfWork, EFUnitOfWork>();
+            services.AddSingleton<IProductService, ProductService>();
+            services.AddSingleton<IWarehouseService, WarehouseService>();
+            services.AddSingleton<IProductInWarehouseService, ProductInWarehouseService>();
+            services.AddSingleton<IUnitOfWork, EFUnitOfWork>();
             services.AddControllers();
         }
 
