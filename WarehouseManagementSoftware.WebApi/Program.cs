@@ -14,6 +14,7 @@ namespace WarehouseManagementSoftware.WebApi
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+            Console.WriteLine("leha zdarova");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
