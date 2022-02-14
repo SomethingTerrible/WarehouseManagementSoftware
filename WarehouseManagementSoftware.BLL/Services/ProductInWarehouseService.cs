@@ -30,7 +30,7 @@ namespace WarehouseManagementSoftware.BLL.Services
             Database.Save();
         }
 
-        public void DeleteItem(int id)
+        public void DeleteItem(Guid id)
         {
             var exists = Database.ProductsInWarehouses.Get(id) != null;
             if (!exists)

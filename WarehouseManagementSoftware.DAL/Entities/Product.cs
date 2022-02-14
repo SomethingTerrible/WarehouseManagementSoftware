@@ -7,7 +7,7 @@ namespace WarehouseManagementSoftware.DAL.Entities
 {
     public class Product
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string  ProductName { get; set; }
     }

@@ -6,7 +6,7 @@ namespace WarehouseManagementSoftware.DAL.Entities
 {
     public class Warehouse
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string  WarehouseName { get; set; }
 

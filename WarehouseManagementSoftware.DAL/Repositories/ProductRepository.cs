@@ -22,7 +22,7 @@ namespace WarehouseManagementSoftware.DAL.Repositories
             _db.Products.Add(item);
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             Product product = _db.Products.Find(id);
             if (product != null)
@@ -34,7 +34,7 @@ namespace WarehouseManagementSoftware.DAL.Repositories
             return _db.Products.Where(predicate).ToList();
         }
 
-        public Product Get(int id)
+        public Product Get(Guid id)
         {
             return _db.Products.Find(id);
         }

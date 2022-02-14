@@ -22,7 +22,7 @@ namespace WarehouseManagementSoftware.DAL.Repositories
             _db.Warehouses.Add(item);
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             var warehouse = _db.Warehouses.Find(id);
             if (warehouse != null)
@@ -34,7 +34,7 @@ namespace WarehouseManagementSoftware.DAL.Repositories
             return _db.Warehouses.Where(predicate).ToList();
         }
 
-        public Warehouse Get(int id)
+        public Warehouse Get(Guid id)
         {
             return _db.Warehouses.Find(id);
         }

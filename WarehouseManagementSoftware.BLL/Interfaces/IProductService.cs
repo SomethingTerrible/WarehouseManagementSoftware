@@ -7,7 +7,7 @@ namespace WarehouseManagementSoftware.BLL.Interfaces
 {
     public interface IProductService
     {
-        void DeleteProduct(int id);
+        void DeleteProduct(Guid id);
 
         void AddProduct(ProductDTO product);
 

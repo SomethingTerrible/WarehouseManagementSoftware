@@ -7,13 +7,14 @@ namespace WarehouseManagementSoftware.BLL.Interfaces
 {
     public interface IProductInWarehouseService
     {
-        void DeleteItem(int id);
+        void DeleteItem(Guid id);
 
         void AddProductInStock(ProductsInWarehousesDTO item);
 
         IEnumerable<ProductsInWarehousesDTO> GetAll();
 
         void Update(ProductsInWarehousesDTO productInStock);
+
         void Dispose();
     }
 }

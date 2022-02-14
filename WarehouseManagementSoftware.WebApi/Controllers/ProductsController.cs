@@ -35,6 +35,7 @@ namespace WarehouseManagementSoftware.WebApi.Controllers
         {
             if (product == null)
                 return BadRequest("Invalid Data");
+
             var mapper = new MapperConfiguration(
                              configuration => configuration.
                              CreateMap<ProductView, ProductDTO>()).
@@ -44,7 +45,7 @@ namespace WarehouseManagementSoftware.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<ViewModels.ProductView> DeleteProduct(int id)
+        public ActionResult<ViewModels.ProductView> DeleteProduct(Guid id)
         {
 
             productService.DeleteProduct(id);

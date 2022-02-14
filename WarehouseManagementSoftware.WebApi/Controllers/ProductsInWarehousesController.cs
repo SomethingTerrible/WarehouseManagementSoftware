@@ -45,7 +45,7 @@ namespace WarehouseManagementSoftware.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<ProductInWarehouseView> Delete(int id)
+        public ActionResult<ProductInWarehouseView> Delete(Guid id)
         {
             productInWarehouse.DeleteItem(id);
             return Ok();

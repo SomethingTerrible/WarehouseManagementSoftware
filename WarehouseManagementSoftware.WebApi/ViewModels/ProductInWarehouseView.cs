@@ -7,10 +7,10 @@ namespace WarehouseManagementSoftware.WebApi.ViewModels
 {
     public class ProductInWarehouseView
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int  ProductId { get; set; }
+        public Guid ProductId { get; set; }
 
-        public int WarehouseId { get; set; }
+        public Guid WarehouseId { get; set; }
     }
 }

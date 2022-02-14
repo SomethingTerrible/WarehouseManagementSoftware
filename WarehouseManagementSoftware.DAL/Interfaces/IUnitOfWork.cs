@@ -10,6 +10,7 @@ namespace WarehouseManagementSoftware.DAL.Interfaces
         IRepository<Product> Products { get; }
         
         IRepository<ProductInWarehouse> ProductsInWarehouses { get; }
+
         IRepository<Warehouse> Warehouses { get; }
 
         void Save();

@@ -7,7 +7,7 @@ namespace WarehouseManagementSoftware.WebApi.ViewModels
 {
     public class ProductView
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string ProductName { get; set; }
  

@@ -7,7 +7,7 @@ namespace WarehouseManagementSoftware.BLL.Interfaces
 {
     public interface IWarehouseService
     {
-        void DeleteStock(int id);
+        void DeleteStock(Guid id);
 
         void MakeStock(WarehouseDTO stock);
 
