@@ -18,10 +18,8 @@ namespace WarehouseManagementSoftware.BLL.Services
             Database = database;
         }
 
-        public void DeleteStock(int id)
+        public void DeleteStock(Guid id)
         {
-            if (id == 0)
-                throw new ArgumentException("Неверное значение id склада");
             var stock = Database.Warehouses.Get(id);
             if (stock == null)
                 throw new ArgumentNullException("Такого склада нет ");

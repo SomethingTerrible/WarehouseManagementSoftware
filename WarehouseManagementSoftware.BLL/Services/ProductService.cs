@@ -33,10 +33,8 @@ namespace WarehouseManagementSoftware.BLL.Services
             Database.Save();
         }
 
-        public void DeleteProduct(int id)
+        public void DeleteProduct(Guid id)
         {
-            if (id == 0)
-                throw new ArgumentException("Неверное значение id");
             var product = Database.Products.Get(id);
             if (product == null)
                 throw new ArgumentNullException("Продукт не найден");
