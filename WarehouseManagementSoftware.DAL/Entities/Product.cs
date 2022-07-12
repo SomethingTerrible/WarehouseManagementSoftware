@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WarehouseManagementSoftware.DAL.Entities
 {
+    /// <summary>
+    /// Класс продукт
+    /// </summary>
     public class Product
     {
         public Guid Id { get; set; }
